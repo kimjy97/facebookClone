@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>facebook - clonecoding</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        li {
+            display: inline-block;
+            list-style: none;
+        }
+        body {
+            background-color: white;
+            overflow-y: scroll;
+        }
+        footer {
+            width: 100%;
+            background-color: white;
+            padding-top: 25px;
+            font-size: 12px;
+            color: #8a8d91;
+            text-align: left;
+            margin: 0 auto;
+        }
+        .wrap {
+            background-color: #f0f2f5;
+        }
+        .contents_section {
+            display: flex;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 30px;
+            padding-top: 172px;
+            padding-bottom: 210px;
+        }
+        .logo_section {
+            width: 600px;
+            
+        }
+        .login_section {
+            width: 450px;
+            
+        }
+        .login_container {
+            width: 450px;
+            height: 370px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+            text-align: center;
+        }
+        .logo {
+            background: url("img/logo.svg") 50% 50% no-repeat;
+            width: 301px;
+            height: 106px;
+            margin-left: -30px;
+            margin-top: 50px;
+            margin-bottom: -10px;
+        }
+        .logo_contents {
+            font-size: 28px;
+            color: #1c1e21;
+            padding-right: 70px;
+        }
+        .inputbox {
+            position: relative;
+            width: 100%;
+            height: 55px;
+            line-height: 55px;
+            text-align: left;
+            padding: 0 16px;
+            margin-bottom: 13px;
+            color: #1d2129;
+            font-size: 17px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            z-index: 500;
+        }
+        .inputbox:focus {
+            outline: none;
+            border-color: #1b74e4;
+            box-shadow: 0 0 0 2px #e7f3ff;
+            caret-color: #1b74e4;
+        }
+        [contenteditable="true"]:empty:before {
+            content: attr(placeholder);
+            color: #969ead;
+            cursor: text;
+            -webkit-text-security: none;
+        }
+        #inputPW {
+            -webkit-text-security: disc !important;
+        }
+        .loginbutton {
+            width: 100%;
+            height: 55px;
+            line-height: 55px;
+            text-align: center;
+            padding: 0 16px;
+            margin-bottom: 13px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #1877f2;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 200ms;
+        }
+        .loginbutton:hover {
+            background-color: #166fe5;
+        }
+        .forgotpw {
+            color: #1877f2;
+            font-size: 14px;
+            padding: 5px 0;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+        .forgotpw:hover {
+            text-decoration: underline;
+        }
+        .login_container hr {
+            width: 100%;
+            height: 1px;
+            margin: 20px 0;
+            border: none;
+            background-color: #dadde1;
+        }
+        .signupButton {
+            width: 150px;
+            height: 55px;
+            line-height: 55px;
+            text-align: center;
+            padding: 0 16px;
+            margin: 0px auto;
+            margin-bottom: 13px;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            background-color: #42b72a;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 200ms;
+        }
+        .signupButton:hover {
+            background-color: #36a420;
+        }
+        .makepage {
+            width: 100%;
+            text-align: center;
+            font-size: 14px;
+            color: #1c1e21;
+            margin-top: 28px;
+        }
+        .makepage b:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .footer_container {
+            width: 100%;
+            max-width: 1100px;
+            padding: 0 30px;
+            margin: 0 auto;
+        }
+        .language {
+            text-align: left;
+            font-size: 13px;
+        }
+        .language li{
+            display: inline-block;
+            padding-right: 10px
+        }
+        .language li:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .footer_container hr {
+            height: 1px;
+            margin-top: 10px;
+            margin-bottom: 8px;
+            border: none;
+            background-color: #dddfe2;
+        }
+        .etc_link {
+            text-align: left;
+            font-size: 13px;
+        }
+        .etc_link li{
+            display: inline-block;
+            padding-top: 4px;
+            padding-right: 14px
+        }
+        .etc_link li:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function login () {
+            alert('ID : '+document.getElementById('inputID').innerText+'\n'+'PW : '+document.getElementById('inputPW').innerText);
+        }
+        
+    </script>
+</head>
+<body>
+    <section class="wrap">
+    <section class="contents_section">
+        <section class="logo_section">
+            <div class="logo"></div>
+            <div class="logo_contents">Facebook에서 전세계에 있는 친구, 가족, 지인들과 함께 이야기를 나눠보세요.</div>
+        </section>
+        <section class="login_section">
+            <div class="login_container">
+                <div class="inputbox id_input" id="inputID" contenteditable="true" placeholder="이메일 또는 전화번호"></div>
+                <div class="inputbox pw_input" id="inputPW" contenteditable="true" placeholder="비밀번호"></div>
+                <div class="loginbutton" onclick="login()">로그인</div>
+                <p class="forgotpw">비밀번호를 잊으셨나요?</p>
+                <hr></hr>
+                <div class="signupButton">새 계정 만들기</div>
+            </div>
+            <p class="makepage">유명인, 브랜드 또는 비즈니스를 위한 <b>페이지 만들기</b>.</p>
+        </section>
+    </section>
+    </section>
+    <footer>
+        <div class="footer_container">
+        <ul class="language">
+            <li>한국어</li>
+            <li>English (US)</li>
+            <li>Tiếng Việt</li>
+            <li>Bahasa Indonesia</li>
+            <li>ภาษาไทย</li>
+            <li>Español</li>
+            <li>中文(简体)</li>
+            <li>日本語</li>
+            <li>Português (Brasil)</li>
+            <li>Français (France)</li>
+            <li>Deutsch</li>
+        </ul>
+        <hr>
+        <ul class="etc_link">
+            <li>가입하기</li>
+            <li>로그인</li>
+            <li>Messenger</li>
+            <li>Facebook Lite</li>
+            <li>Watch</li>
+            <li>장소</li>
+            <li>게임</li>
+            <li>Marketplace</li>
+            <li>Meta Pay</li>
+            <li>Oculus</li>
+            <li>Portal</li>
+            <li>Instagram</li>
+            <li>Bulletin</li>
+            <li>지역</li>
+            <li>기부 캠페인</li>
+            <li>서비스</li>
+            <li>투표 정보 센터</li>
+            <li>그룹</li>
+            <li>정보</li>
+            <li>광고 만들기</li>
+            <li>페이지 만들기</li>
+            <li>개발자</li>
+            <li>채용 정보</li>
+            <li>개인정보처리방침</li>
+            <li>쿠키</li>
+            <li>AdChoices</li>
+            <li>이용 약관</li>
+            <li>고객 센터</li>
+            <li>연락처 업로드 및 비사용자</li>
+        </ul>
+        <br>
+        <br>
+        <p>Meta © 2022</p>
+        </div> 
+        </footer>
+</body>
+</html>
